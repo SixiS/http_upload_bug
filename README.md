@@ -4,7 +4,7 @@
 
 Ruby version: 2.2.3
 
-This repo is for reproducing an error "IOError: uninitialized stream" when passing HTTP Uploaded Files to a model in serialized params.
+This repo is for reproducing an error "IOError: uninitialized stream" when passing `ActionDispatch::Http::UploadedFile` to a model in serialized params.
 The error happens in Rails 4.2, but works in 4.1
 
 To reproduce the error:
