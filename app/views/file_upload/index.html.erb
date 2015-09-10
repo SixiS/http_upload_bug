@@ -1,0 +1,22 @@
+<% if @file_size %>
+  <div>Uploaded file size: <%= @file_size %></div>
+<% else %>
+  <div>Upload a file to find out its size.</div>
+<% end %>
+
+<%= form_for :file_upload, multipart: true do |f| %>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </p>
+  <%= f.fields_for :file_details do |g| %>
+    <p>
+      <%= g.label :file %>
+      <%= g.file_field :file %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
